@@ -45,7 +45,7 @@ class LabelGroup():
 
 
 class Wombat():
-    def __init(self, labels: list[str], frames: npt.NDArray[np.uint8], learning_rate: float):
+    def __init__(self, labels: list[str], frames: npt.NDArray[np.uint8], learning_rate: float):
         self.learning_rate = learning_rate
         self.label_groups: list[LabelGroup] = []
 
