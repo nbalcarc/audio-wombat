@@ -1,3 +1,7 @@
 **/target
 **/__pycache__
 **/*.so
+**/.ipynb_checkpoints
+**/*.zip
+**/data_shuffled
+

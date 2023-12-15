@@ -1,10 +1,10 @@
 
 
-def audio_wombat(frames: int, image: int, output_buffer: int, image_size: int, rotation_amount: int, frame_count: int):
+def audio_wombat(frames: int, image: int, output_buffer: int, image_size: int, stride: int, frame_count: int):
     """Applies the frames to the images. Accepts numpy pointers."""
     # list of bools?
 
-def audio_wombat1(frames: int, image: int, output_buffer: int, image_size: int, rotation_amount: int, frame_count: int):
+def audio_wombat1(frames: int, image: int, output_buffer: int, image_size: int, stride: int, frame_count: int):
     """Applies the frames to the images. Accepts numpy pointers."""
     # list of bools?
 
