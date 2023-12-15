@@ -105,8 +105,34 @@ class TestAudioWombat(unittest.TestCase):
         end = perf_counter()
         print(f"time: {end - start}")
 
+def performance_data():
+    for i in [1, 10, 100, 1_000]:
+        frames = np.random.randint(5, size = (i, 129*982), dtype = np.int8)
+        image = np.random.randint(5, size = (129*982), dtype = np.int8)
+        start = perf_counter()
+        out = audio_wombat_test_helper(frames, image, 129)[0]
+        end = perf_counter()
+        print(f"rust {i} time: {end - start}")
+        start = perf_counter()
+        out = audio_wombat_test_helper1(frames, image, 129)[0]
+        end = perf_counter()
+        print(f"cuda {i} time: {end - start}")
+    for i in [10_000, 100_000]:
+        frames = np.random.randint(5, size = (i, 129*982), dtype = np.int8)
+        image = np.random.randint(5, size = (129*982), dtype = np.int8)
+        start = perf_counter()
+        out = audio_wombat_test_helper1(frames, image, 129)[0]
+        end = perf_counter()
+        print(f"cuda {i} time: {end - start}")
+
+
+
+
 if __name__ == '__main__':
     unittest.main()
+
+    #performance_data()
+
 
     #a = np.array([-1, 2, 4, 0, 5, 3, 6, 2, 1], dtype = np.float32)
     #b = np.array([3, 0, 2, 3, 4, 5, 4, 7, 2], dtype = np.float32)
